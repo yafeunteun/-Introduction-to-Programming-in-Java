@@ -25,17 +25,17 @@ public class FooCorporationTest
      */
     public static Test suite()
     {
-        return new TestSuite( FooCorporation.class );
+        return new TestSuite( FooCorporationTest.class );
     }
 
 
-    public void testFooCorporationLessThan40HoursWorkWeek()
+    public void testFooCorporationLessThan40HoursWorkWeek() throws YouWorkTooMuchException 
     {
 	double salary = FooCorporation.computeTotalPay(7.50, 35);
 	assertTrue( salary < 263 && salary > 262);
     }
 
-    public void testFooCorporationMoreThan40HoursWorkWeekButLessThan60HoursWorkWeek()
+    public void testFooCorporationMoreThan40HoursWorkWeekButLessThan60HoursWorkWeek() throws YouWorkTooMuchException 
     {
 	double salary = FooCorporation.computeTotalPay(8.20, 47);
 	assertTrue( salary < 415 && salary > 414);
