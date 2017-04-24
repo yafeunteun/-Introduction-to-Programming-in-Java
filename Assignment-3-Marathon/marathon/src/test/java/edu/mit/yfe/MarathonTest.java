@@ -1,11 +1,35 @@
 package edu.mit.yfe;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
+import junit.framework.Test;
+import junit.framework.TestCase;
+import junit.framework.TestSuite;
 
-public class MarathonTest {
+/**
+ * Unit test for Marathon
+ */
+public class MarathonTest
+    extends TestCase
+{
+    /**
+     * Create the test case
+     *
+     * @param testName name of the test case
+     */
+    public MarathonTest( String testName )
+    {
+        super( testName );
+    }
+
+
+    /**
+     * @return the suite of tests being tested
+     */
+    public static Test suite()
+    {
+        return new TestSuite( MarathonTest.class );
+    }
+
     
-
     public void testFindMinTime1() throws EmptyInputArrayException, NegativeTimeException {
 	int input [] = {0,0,0,0};
 	assertEquals(Marathon.findMinTime(input), 0);
